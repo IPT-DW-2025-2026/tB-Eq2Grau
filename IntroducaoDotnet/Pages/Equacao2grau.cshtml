@@ -1,0 +1,38 @@
+@page
+@model IntroducaoDotnet.Pages.Equacao2grau
+
+@{
+    ViewData["Title"] = "Equacao 2 Grau";
+}
+
+<div class="text-center">
+    <h4>Olá página</h4>
+    
+    <form method="post">
+        <div class="row">
+            <div class="col-4">
+                <label>Parte A</label>
+                <input asp-for="@Model.EquacaoModel.A"/>
+            </div>
+            <div class="col-4">
+                <label>Parte B</label>
+                <input asp-for="@Model.EquacaoModel.B"/>
+            </div>
+            <div class="col-4">
+                <label>Parte C</label>
+                <input asp-for="@Model.EquacaoModel.C"/>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Calcula as raízes"/>
+        </div>
+    </form>
+    
+    @if (!string.IsNullOrEmpty(Model.Raiz1) || !string.IsNullOrEmpty(Model.Raiz2))
+    {
+        <div>
+            <h4>A raiz 1 é @Model.Raiz1</h4>
+            <h4>A raiz 2 é @Model.Raiz2</h4>
+        </div>
+    }
+</div>
